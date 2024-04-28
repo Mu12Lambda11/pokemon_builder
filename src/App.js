@@ -9,6 +9,8 @@ function App() {
   const [selectedButton, setSelectedButton] = useState('');
   const [gameIntensity, setGameIntensity] = useState(false);
   const [selectedPokemon, setPokemon] = useState('');
+  const [generatedText, setGeneratedText] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (stage === 2) {
@@ -16,6 +18,24 @@ function App() {
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error(error));
+    }else if (stage === 4) {
+      setIsLoading(true);
+      fetch('http://localhost:5000/generate-pokemon-team', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user_input: selectedPokemon }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        setGeneratedText(data);
+        setIsLoading(false);  // Move this line here
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setIsLoading(false);
+      });
     }
   }, [stage, selectedButton]);
 
@@ -67,6 +87,7 @@ function App() {
   stage 1 = [GENERATION]
   stage 2 = [FORMAT]
   stage 3 = [POKEMON]
+  stage 4 = Display Text
   */
   return (
     <div style={{ textAlign: 'center' }}>
@@ -99,6 +120,11 @@ function App() {
           onChange={(selectedOption)=> setPokemon(selectedOption.label)}
         />
         <button onClick={() => handleButtonClick(selectedPokemon)}>Confirm</button>
+      </div>
+      )}
+      {stage === 4 &&(
+        <div>
+        {isLoading ? <p>Loading...</p> : <p>{generatedText}</p>}
       </div>
       )}
       <p>Selected Button: {selectedButton}</p>

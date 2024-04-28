@@ -1,6 +1,11 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
-import requests, os
+import textwrap, os
+import google.generativeai as genai
+
+my_api_key= "AIzaSyCsd4MWaVsHJCUQ4MPdGFlaDQYCfAp4PTc"
+genai.configure(api_key=my_api_key)
+model = genai.GenerativeModel('gemini-pro')
 
 app = Flask(__name__)
 CORS(app)
@@ -22,32 +27,17 @@ def generate_pokemon_team():
     total_user_input.append(user_input)
 
     # Extract relevant information from user input (e.g., game type, generation, format, Pokémon)
-    game_type, generation, format, pokemon = parse_user_input(user_input)
+    game_type, generation, format, pokemon = parse_user_input()
 
     # Construct the prompt for Gemini
-    prompt = f"I want to build a {game_type} Pokémon team for {generation} {format} built around {pokemon}. Please provide me with 5 other Pokémon that complement my choice, and provide sets for all 6 Pokémon on the team."
+    prompt = f"I want to build a {game_type} Pokémon team for Generation {generation} {format} built around {pokemon}. Please provide me with 5 other Pokémon that complement my choice, and provide sets for all 6 Pokémon on the team."
 
-    # Make an API call to Gemini
-    api_url = "https://gemini.googleapis.com/v1/complete"
-    api_key = "AIzaSyCsd4MWaVsHJCUQ4MPdGFlaDQYCfAp4PTc"
-    payload = {
-        "prompt": prompt,
-        "max_tokens": 150,  # Adjust as needed
-        "temperature": 0.7,  # Adjust for creativity vs. coherence
-    }
-
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-    }
-
-    try:
-        response = requests.post(api_url, json=payload, headers=headers)
-        generated_text = response.json().get("choices")[0].get("text")
-        return jsonify(generated_text)
-    except Exception as e:
-        print(f"Error fetching team recommendations: {e}")
-        return jsonify("Error generating team recommendations")
+    if game_type and generation and format and pokemon != ' ':
+            response = model.generate_content(prompt)
+            generated_text = response.text
+            return jsonify(generated_text)
+    else: return jsonify("Team is pending")
+    
     
 def generation_switch(generation):
     if generation == "I":
@@ -69,13 +59,13 @@ def generation_switch(generation):
     elif generation == "IX":
         return "9"
     
-def parse_user_input(user_input):
-    if len(total_user_input[3])!=None:
+def parse_user_input():
+    if len(total_user_input)==4:
         # Assuming total_user_input is a list of strings like ['game_type', 'generation', 'format', 'pokemon']
         game_type = total_user_input[0]
         generation = total_user_input[1]
         format = total_user_input[2]
-        pokemon = total_user_input[3]
+        pokemon = (total_user_input[3])[6:]
     else:
         game_type = " "
         generation = " "
