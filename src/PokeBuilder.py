@@ -23,9 +23,6 @@ def get_file_data(generation):
 
 @app.route('/generate-pokemon-team', methods=['POST'])
 def generate_pokemon_team():
-    user_input = request.json.get('user_input')
-    total_user_input.append(user_input)
-
     # Extract relevant information from user input (e.g., game type, generation, format, Pokémon)
     game_type, generation, format, pokemon = parse_user_input()
 
@@ -33,11 +30,26 @@ def generate_pokemon_team():
     prompt = f"I want to build a {game_type} Pokémon team for Generation {generation} {format} built around {pokemon}. Please provide me with 5 other Pokémon that complement my choice, and provide sets for all 6 Pokémon on the team."
 
     if game_type and generation and format and pokemon != ' ':
+        prompt_complete=True
+    else:
+        prompt_complete=False
+    
+    if prompt_complete:
+        try:
             response = model.generate_content(prompt)
             generated_text = response.text
-            return jsonify(generated_text)
-    else: return jsonify("Team is pending")
+            print(generated_text)
+            return jsonify({'generated_text': generated_text})
+        except Exception as e:
+            print(f"Error fetching team recommendations: {e}")
+            return jsonify("Error generating team recommendations")
+    else:
+        return jsonify({'generated_text': "Team is pending"})
     
+@app.route('/add-user-route', methods=['POST'])
+def add_user_input():
+    user_input = request.json.get('user_input')
+    total_user_input.append(user_input)
     
 def generation_switch(generation):
     if generation == "I":

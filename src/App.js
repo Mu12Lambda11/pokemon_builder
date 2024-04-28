@@ -18,7 +18,8 @@ function App() {
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error(error));
-    }else if (stage === 4) {
+    }
+    else if (stage === 4) {
       setIsLoading(true);
       fetch('http://localhost:5000/generate-pokemon-team', {
         method: 'POST',
@@ -29,29 +30,30 @@ function App() {
       })
       .then(response => response.json())
       .then(data => {
-        setGeneratedText(data);
+        setGeneratedText(data.generated_text);
+        console.log("Loading done")
         setIsLoading(false);  // Move this line here
       })
       .catch((error) => {
         console.error('Error:', error);
-        setIsLoading(false);
-      });
+      })
     }
   }, [stage, selectedButton]);
 
-  const handleButtonClick = (buttonLabel) => {
+  const handleButtonClick = async (buttonLabel) => {  // Make this function async
     setSelectedButton(buttonLabel);
-    // Send the selected button to the backend
-    fetch('http://localhost:5000/generate-pokemon-team', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ user_input: buttonLabel }),
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch((error) => console.error('Error:', error));
+  
+    // Send the selected button to the backend and wait for it to complete
+    await fetch('http://localhost:5000/add-user-route', {  // Use the await keyword here
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ user_input: buttonLabel }),
+  })
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch((error) => console.error('Error:', error));
 
     switch(stage) {
       case 0:
