@@ -19,6 +19,7 @@ def get_file_data(generation):
 @app.route('/generate-pokemon-team', methods=['POST'])
 def generate_pokemon_team():
     user_input = request.json.get('user_input')
+    total_user_input.append(user_input)
 
     # Extract relevant information from user input (e.g., game type, generation, format, Pokémon)
     game_type, generation, format, pokemon = parse_user_input(user_input)
@@ -69,7 +70,7 @@ def generation_switch(generation):
         return "9"
     
 def parse_user_input(user_input):
-    if len(total_user_input)==4:
+    if len(total_user_input[3])!=None:
         # Assuming total_user_input is a list of strings like ['game_type', 'generation', 'format', 'pokemon']
         game_type = total_user_input[0]
         generation = total_user_input[1]

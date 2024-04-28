@@ -8,6 +8,7 @@ function App() {
   const [message, setMessage] = useState('Please select your game intensity');
   const [selectedButton, setSelectedButton] = useState('');
   const [gameIntensity, setGameIntensity] = useState(false);
+  const [selectedPokemon, setPokemon] = useState('');
 
   useEffect(() => {
     if (stage === 2) {
@@ -91,9 +92,14 @@ function App() {
         </div>
       )}
       {stage === 3 &&(
-        <div style={{ overflowY: 'scroll', maxHeight: '200px' }}>
-          <Select options={data.map((item, index) => ({ label: item, value: index }))} />
-        </div>
+        <div>
+        <Select 
+          options={data.map((item, index) => ({ label: item, value: index }))}
+          styles={{ menu: (provided) => ({ ...provided, width: 300, height: 400 }) }}
+          onChange={(selectedOption)=> setPokemon(selectedOption.label)}
+        />
+        <button onClick={() => handleButtonClick(selectedPokemon)}>Confirm</button>
+      </div>
       )}
       <p>Selected Button: {selectedButton}</p>
     </div>
