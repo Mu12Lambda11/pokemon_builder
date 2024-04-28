@@ -1,6 +1,18 @@
+from flask import Flask, jsonify, request
 import requests
 
-def generate_pokemon_team(user_input):
+app = Flask(__name__)
+
+@app.route('/get-file-data', methods=['GET'])
+def get_file_data():
+    with open('yourfile.txt', 'r') as f:
+        lines = f.read().splitlines()
+    return jsonify(lines)
+
+@app.route('/generate-pokemon-team', methods=['POST'])
+def generate_pokemon_team():
+    user_input = request.json.get('user_input')
+
     # Extract relevant information from user input (e.g., game type, generation, format, Pokémon)
     game_type, generation, format, pokemon = parse_user_input(user_input)
 
@@ -9,7 +21,7 @@ def generate_pokemon_team(user_input):
 
     # Make an API call to Gemini
     api_url = "https://gemini.googleapis.com/v1/complete"
-    api_key = "AIzaSyCsd4MWaVsHJCUQ4MPdGFlaDQYCfAp4PTc" 
+    api_key = "AIzaSyCsd4MWaVsHJCUQ4MPdGFlaDQYCfAp4PTc"  # Replace with your actual API key
     payload = {
         "prompt": prompt,
         "max_tokens": 150,  # Adjust as needed
@@ -24,17 +36,14 @@ def generate_pokemon_team(user_input):
     try:
         response = requests.post(api_url, json=payload, headers=headers)
         generated_text = response.json().get("choices")[0].get("text")
-        return generated_text
+        return jsonify(generated_text)
     except Exception as e:
         print(f"Error fetching team recommendations: {e}")
-        return "Error generating team recommendations"
+        return jsonify("Error generating team recommendations")
 
 def parse_user_input(user_input):
     # Implement your logic to extract game type, generation, format, and Pokémon
     # For example, split the input string and extract relevant parts
 
-    if __name__ == "__main__":
-        user_input = input("Enter your team request: ")
-        generated_team = generate_pokemon_team(user_input)
-        print("Generated Pokémon Team:")
-        print(generated_team)
+    if __name__ == '__main__':
+        app.run(port=5000)
