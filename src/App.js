@@ -8,14 +8,28 @@ function App() {
   const [selectedButton, setSelectedButton] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/get-file-data')
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error(error));
-  }, []);
+    if (stage === 2) {
+      fetch(`http://localhost:5000/get-file-data/${selectedButton}`)
+        .then(response => response.json())
+        .then(data => setData(data))
+        .catch(error => console.error(error));
+    }
+  }, [stage, selectedButton]);
 
   const handleButtonClick = (buttonLabel) => {
     setSelectedButton(buttonLabel);
+    // Send the selected button to the backend
+    fetch('http://localhost:5000/generate-pokemon-team', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user_input: buttonLabel }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch((error) => console.error('Error:', error));
+
     switch(stage) {
       case 0:
         setMessage('Please select your generation');
@@ -51,11 +65,11 @@ function App() {
         </div>
       )}
       {stage === 2 &&(
-        <div>
-          {data.map((line, index) => (
-            <p key={index}>{line}</p>
-          ))}
-        </div>
+        <div style={{ overflowY: 'scroll', maxHeight: '200px' }}>
+        {data.map((line, index) => (
+          <p key={index}>{line}</p>
+        ))}
+      </div>
       )}
       <p>Selected Button: {selectedButton}</p>
     </div>
