@@ -1,0 +1,892 @@
+#0001 Bulbasaur
+#0002 Ivysaur
+#0003 Venusaur
+#0004 Charmander
+#0005 Charmeleon
+#0006 Charizard
+#0007 Squirtle
+#0008 Wartortle
+#0009 Blastoise
+#0023 Ekans
+#0024 Arbok
+#0025 Pikachu
+#0026 Raichu
+#0026 Raichu (Alola)
+#0027 Sandshrew
+#0027 Sandshrew (Alola)
+#0028 Sandslash
+#0028 Sandslash (Alola)
+#0035 Clefairy
+#0036 Clefable
+#0037 Vulpix
+#0037 Vulpix (Alola)
+#0038 Ninetales
+#0038 Ninetales (Alola)
+#0039 Jigglypuff
+#0040 Wigglytuff
+#0043 Oddish
+#0044 Gloom
+#0045 Vileplume
+#0048 Venonat
+#0049 Venomoth
+#0050 Diglett
+#0050 Diglett (Alola)
+#0051 Dugtrio
+#0051 Dugtrio (Alola)
+#0052 Meowth
+#0052 Meowth (Alola)
+#0052 Meowth (Galar)
+#0053 Persian
+#0053 Persian (Alola)
+#0054 Psyduck
+#0055 Golduck
+#0056 Mankey
+#0057 Primeape
+#0058 Growlithe
+#0058 Growlithe (Hisui)
+#0059 Arcanine
+#0059 Arcanine (Hisui)
+#0060 Poliwag
+#0061 Poliwhirl
+#0062 Poliwrath
+#0069 Bellsprout
+#0070 Weepinbell
+#0071 Victreebel
+#0072 Tentacool
+#0073 Tentacruel
+#0074 Geodude
+#0074 Geodude (Alola)
+#0075 Graveler
+#0075 Graveler (Alola)
+#0076 Golem
+#0076 Golem (Alola)
+#0079 Slowpoke
+#0079 Slowpoke (Galar)
+#0080 Slowbro
+#0080 Slowbro (Galar)
+#0081 Magnemite
+#0082 Magneton
+#0084 Doduo
+#0085 Dodrio
+#0086 Seel
+#0087 Dewgong
+#0088 Grimer
+#0088 Grimer (Alola)
+#0089 Muk
+#0089 Muk (Alola)
+#0090 Shellder
+#0091 Cloyster
+#0092 Gastly
+#0093 Haunter
+#0094 Gengar
+#0096 Drowzee
+#0097 Hypno
+#0100 Voltorb
+#0100 Voltorb (Hisui)
+#0101 Electrode
+#0101 Electrode (Hisui)
+#0102 Exeggcute
+#0103 Exeggutor
+#0103 Exeggutor (Alola)
+#0106 Hitmonlee
+#0107 Hitmonchan
+#0109 Koffing
+#0110 Weezing
+#0110 Weezing (Galar)
+#0111 Rhyhorn
+#0112 Rhydon
+#0113 Chansey
+#0116 Horsea
+#0117 Seadra
+#0123 Scyther
+#0125 Electabuzz
+#0126 Magmar
+#0128 Tauros
+#0128 Tauros (Paldean Combat Breed)
+#0128 Tauros (Paldean Blaze Breed)
+#0128 Tauros (Paldean Aqua Breed)
+#0129 Magikarp
+#0130 Gyarados
+#0131 Lapras
+#0132 Ditto
+#0133 Eevee
+#0134 Vaporeon
+#0135 Jolteon
+#0136 Flareon
+#0137 Porygon
+#0143 Snorlax
+#0144 Articuno
+#0144 Articuno (Galar)
+#0145 Zapdos
+#0145 Zapdos (Galar)
+#0146 Moltres
+#0146 Moltres (Galar)
+#0147 Dratini
+#0148 Dragonair
+#0149 Dragonite
+#0150 Mewtwo
+#0151 Mew
+#0152 Chikorita
+#0153 Bayleef
+#0154 Meganium
+#0155 Cyndaquil
+#0156 Quilava
+#0157 Typhlosion
+#0157 Typhlosion (Hisui)
+#0158 Totodile
+#0159 Croconaw
+#0160 Feraligatr
+#0161 Sentret
+#0162 Furret
+#0163 Hoothoot
+#0164 Noctowl
+#0167 Spinarak
+#0168 Ariados
+#0170 Chinchou
+#0171 Lanturn
+#0172 Pichu
+#0173 Cleffa
+#0174 Igglybuff
+#0179 Mareep
+#0180 Flaaffy
+#0181 Ampharos
+#0182 Bellossom
+#0183 Marill
+#0184 Azumarill
+#0185 Sudowoodo
+#0186 Politoed
+#0187 Hoppip
+#0188 Skiploom
+#0189 Jumpluff
+#0190 Aipom
+#0191 Sunkern
+#0192 Sunflora
+#0193 Yanma
+#0194 Wooper
+#0194 Wooper (Paldea)
+#0195 Quagsire
+#0196 Espeon
+#0197 Umbreon
+#0198 Murkrow
+#0199 Slowking
+#0199 Slowking (Galar)
+#0200 Misdreavus
+#0203 Girafarig
+#0204 Pineco
+#0205 Forretress
+#0206 Dunsparce
+#0207 Gligar
+#0209 Snubbull
+#0210 Granbull
+#0211 Qwilfish
+#0211 Qwilfish (Hisui)
+#0212 Scizor
+#0214 Heracross
+#0215 Sneasel
+#0215 Sneasel (Hisui)
+#0216 Teddiursa
+#0217 Ursaring
+#0218 Slugma
+#0219 Magcargo
+#0220 Swinub
+#0221 Piloswine
+#0225 Delibird
+#0227 Skarmory
+#0228 Houndour
+#0229 Houndoom
+#0230 Kingdra
+#0231 Phanpy
+#0232 Donphan
+#0233 Porygon2
+#0234 Stantler
+#0235 Smeargle
+#0236 Tyrogue
+#0237 Hitmontop
+#0239 Elekid
+#0240 Magby
+#0242 Blissey
+#0243 Raikou
+#0244 Entei
+#0245 Suicune
+#0246 Larvitar
+#0247 Pupitar
+#0248 Tyranitar
+#0249 Lugia
+#0250 Ho-Oh
+#0252 Treecko
+#0253 Grovyle
+#0254 Sceptile
+#0255 Torchic
+#0256 Combusken
+#0257 Blaziken
+#0258 Mudkip
+#0259 Marshtomp
+#0260 Swampert
+#0261 Poochyena
+#0262 Mightyena
+#0270 Lotad
+#0271 Lombre
+#0272 Ludicolo
+#0273 Seedot
+#0274 Nuzleaf
+#0275 Shiftry
+#0278 Wingull
+#0279 Pelipper
+#0280 Ralts
+#0281 Kirlia
+#0282 Gardevoir
+#0283 Surskit
+#0284 Masquerain
+#0285 Shroomish
+#0286 Breloom
+#0287 Slakoth
+#0288 Vigoroth
+#0289 Slaking
+#0296 Makuhita
+#0297 Hariyama
+#0298 Azurill
+#0299 Nosepass
+#0302 Sableye
+#0307 Meditite
+#0308 Medicham
+#0311 Plusle
+#0312 Minun
+#0313 Volbeat
+#0314 Illumise
+#0316 Gulpin
+#0317 Swalot
+#0322 Numel
+#0323 Camerupt
+#0324 Torkoal
+#0325 Spoink
+#0326 Grumpig
+#0328 Trapinch
+#0329 Vibrava
+#0330 Flygon
+#0331 Cacnea
+#0332 Cacturne
+#0333 Swablu
+#0334 Altaria
+#0335 Zangoose
+#0336 Seviper
+#0339 Barboach
+#0340 Whiscash
+#0341 Corphish
+#0342 Crawdaunt
+#0349 Feebas
+#0350 Milotic
+#0353 Shuppet
+#0354 Banette
+#0355 Duskull
+#0356 Dusclops
+#0357 Tropius
+#0358 Chimecho
+#0361 Snorunt
+#0362 Glalie
+#0370 Luvdisc
+#0371 Bagon
+#0372 Shelgon
+#0373 Salamence
+#0374 Beldum
+#0375 Metang
+#0376 Metagross
+#0377 Regirock
+#0378 Regice
+#0379 Registeel
+#0380 Latias
+#0381 Latios
+#0382 Kyogre
+#0383 Groudon
+#0384 Rayquaza
+#0385 Jirachi
+#0386 Deoxys
+#0386 Deoxys (Attack)
+#0386 Deoxys (Defense)
+#0386 Deoxys (Speed)
+#0387 Turtwig
+#0388 Grotle
+#0389 Torterra
+#0390 Chimchar
+#0391 Monferno
+#0392 Infernape
+#0393 Piplup
+#0394 Prinplup
+#0395 Empoleon
+#0396 Starly
+#0397 Staravia
+#0398 Staraptor
+#0401 Kricketot
+#0402 Kricketune
+#0403 Shinx
+#0404 Luxio
+#0405 Luxray
+#0408 Cranidos
+#0409 Rampardos
+#0410 Shieldon
+#0411 Bastiodon
+#0415 Combee
+#0416 Vespiquen
+#0417 Pachirisu
+#0418 Buizel
+#0419 Floatzel
+#0422 Shellos
+#0422 Shellos (East Sea)
+#0423 Gastrodon
+#0423 Gastrodon (East Sea)
+#0424 Ambipom
+#0425 Drifloon
+#0426 Drifblim
+#0429 Mismagius
+#0430 Honchkrow
+#0433 Chingling
+#0434 Stunky
+#0435 Skuntank
+#0436 Bronzor
+#0437 Bronzong
+#0438 Bonsly
+#0440 Happiny
+#0442 Spiritomb
+#0443 Gible
+#0444 Gabite
+#0445 Garchomp
+#0446 Munchlax
+#0447 Riolu
+#0448 Lucario
+#0449 Hippopotas
+#0450 Hippowdon
+#0453 Croagunk
+#0454 Toxicroak
+#0456 Finneon
+#0457 Lumineon
+#0459 Snover
+#0460 Abomasnow
+#0461 Weavile
+#0462 Magnezone
+#0464 Rhyperior
+#0466 Electivire
+#0467 Magmortar
+#0469 Yanmega
+#0470 Leafeon
+#0471 Glaceon
+#0472 Gliscor
+#0473 Mamoswine
+#0474 Porygon-Z
+#0475 Gallade
+#0476 Probopass
+#0477 Dusknoir
+#0478 Froslass
+#0479 Rotom
+#0479 Rotom (Heat)
+#0479 Rotom (Wash)
+#0479 Rotom (Frost)
+#0479 Rotom (Fan)
+#0479 Rotom (Mow)
+#0480 Uxie
+#0481 Mesprit
+#0482 Azelf
+#0483 Dialga
+#0483 Dialga (Origin)
+#0484 Palkia
+#0484 Palkia (Origin)
+#0485 Heatran
+#0486 Regigigas
+#0487 Giratina
+#0487 Giratina (Origin)
+#0488 Cresselia
+#0489 Phione
+#0490 Manaphy
+#0491 Darkrai
+#0492 Shaymin
+#0492 Shaymin (Sky)
+#0493 Arceus
+#0495 Snivy
+#0496 Servine
+#0497 Serperior
+#0498 Tepig
+#0499 Pignite
+#0500 Emboar
+#0501 Oshawott
+#0502 Dewott
+#0503 Samurott
+#0503 Samurott (Hisui)
+#0522 Blitzle
+#0523 Zebstrika
+#0529 Drilbur
+#0530 Excadrill
+#0532 Timburr
+#0533 Gurdurr
+#0534 Conkeldurr
+#0540 Sewaddle
+#0541 Swadloon
+#0542 Leavanny
+#0546 Cottonee
+#0547 Whimsicott
+#0548 Petilil
+#0549 Lilligant
+#0549 Lilligant (Hisui)
+#0550 Basculin
+#0550 Basculin (Blue-Striped)
+#0550 Basculin (White-Striped)
+#0551 Sandile
+#0552 Krokorok
+#0553 Krookodile
+#0559 Scraggy
+#0560 Scrafty
+#0570 Zorua
+#0570 Zorua (Hisui)
+#0571 Zoroark
+#0571 Zoroark (Hisui)
+#0572 Minccino
+#0573 Cinccino
+#0574 Gothita
+#0575 Gothorita
+#0576 Gothitelle
+#0577 Solosis
+#0578 Duosion
+#0579 Reuniclus
+#0580 Ducklett
+#0581 Swanna
+#0585 Deerling
+#0585 Deerling (Summer)
+#0585 Deerling (Autumn)
+#0585 Deerling (Winter)
+#0586 Sawsbuck
+#0586 Sawsbuck (Summer)
+#0586 Sawsbuck (Autumn)
+#0586 Sawsbuck (Winter)
+#0590 Foongus
+#0591 Amoonguss
+#0594 Alomomola
+#0595 Joltik
+#0596 Galvantula
+#0602 Tynamo
+#0603 Eelektrik
+#0604 Eelektross
+#0607 Litwick
+#0608 Lampent
+#0609 Chandelure
+#0610 Axew
+#0611 Fraxure
+#0612 Haxorus
+#0613 Cubchoo
+#0614 Beartic
+#0615 Cryogonal
+#0619 Mienfoo
+#0620 Mienshao
+#0622 Golett
+#0623 Golurk
+#0624 Pawniard
+#0625 Bisharp
+#0627 Rufflet
+#0628 Braviary
+#0628 Braviary (Hisui)
+#0629 Vullaby
+#0630 Mandibuzz
+#0633 Deino
+#0634 Zweilous
+#0635 Hydreigon
+#0636 Larvesta
+#0637 Volcarona
+#0638 Cobalion
+#0639 Terrakion
+#0640 Virizion
+#0641 Tornadus
+#0641 Tornadus (Therian)
+#0642 Thundurus
+#0642 Thundurus (Therian)
+#0643 Reshiram
+#0644 Zekrom
+#0645 Landorus
+#0645 Landorus (Therian)
+#0646 Kyurem
+#0646 Kyurem (White)
+#0646 Kyurem (Black)
+#0647 Keldeo
+#0647 Keldeo (Resolute)
+#0648 Meloetta
+#0648 Meloetta (Pirouette)
+#0650 Chespin
+#0651 Quilladin
+#0652 Chesnaught
+#0653 Fennekin
+#0654 Braixen
+#0655 Delphox
+#0656 Froakie
+#0657 Frogadier
+#0658 Greninja
+#0661 Fletchling
+#0662 Fletchinder
+#0663 Talonflame
+#0664 Scatterbug
+#0665 Spewpa
+#0666 Vivillon
+#0666 Vivillon (Polar Pattern)
+#0666 Vivillon (Tundra Pattern)
+#0666 Vivillon (Continental Pattern)
+#0666 Vivillon (Garden Pattern)
+#0666 Vivillon (Elegant Pattern)
+#0666 Vivillon (Icy Snow Pattern)
+#0666 Vivillon (Modern Pattern)
+#0666 Vivillon (Marine Pattern)
+#0666 Vivillon (Archipelago Pattern)
+#0666 Vivillon (High Plains Pattern)
+#0666 Vivillon (Sandstorm Pattern)
+#0666 Vivillon (River Pattern)
+#0666 Vivillon (Monsoon Pattern)
+#0666 Vivillon (Savanna Pattern)
+#0666 Vivillon (Sun Pattern)
+#0666 Vivillon (Ocean Pattern)
+#0666 Vivillon (Jungle Pattern)
+#0666 Vivillon (Fancy Pattern)
+#0666 Vivillon (Poké Ball Pattern)
+#0667 Litleo
+#0668 Pyroar
+#0669 Flabébé
+#0669 Flabébé (Yellow Flower)
+#0669 Flabébé (Orange Flower)
+#0669 Flabébé (Blue Flower)
+#0669 Flabébé (White Flower)
+#0670 Floette
+#0670 Floette (Yellow Flower)
+#0670 Floette (Orange Flower)
+#0670 Floette (Blue Flower)
+#0670 Floette (White Flower)
+#0671 Florges
+#0671 Florges (Yellow Flower)
+#0671 Florges (Orange Flower)
+#0671 Florges (Blue Flower)
+#0671 Florges (White Flower)
+#0672 Skiddo
+#0673 Gogoat
+#0677 Espurr
+#0678 Meowstic
+#0678 Meowstic (Female)
+#0686 Inkay
+#0687 Malamar
+#0690 Skrelp
+#0691 Dragalge
+#0692 Clauncher
+#0693 Clawitzer
+#0700 Sylveon
+#0701 Hawlucha
+#0702 Dedenne
+#0703 Carbink
+#0704 Goomy
+#0705 Sliggoo
+#0705 Sliggoo (Hisui)
+#0706 Goodra
+#0706 Goodra (Hisui)
+#0707 Klefki
+#0708 Phantump
+#0709 Trevenant
+#0712 Bergmite
+#0713 Avalugg
+#0713 Avalugg (Hisui)
+#0714 Noibat
+#0715 Noivern
+#0719 Diancie
+#0720 Hoopa
+#0720 Hoopa (Unbound)
+#0721 Volcanion
+#0722 Rowlet
+#0723 Dartrix
+#0724 Decidueye
+#0724 Decidueye (Hisui)
+#0725 Litten
+#0726 Torracat
+#0727 Incineroar
+#0728 Popplio
+#0729 Brionne
+#0730 Primarina
+#0731 Pikipek
+#0732 Trumbeak
+#0733 Toucannon
+#0734 Yungoos
+#0735 Gumshoos
+#0736 Grubbin
+#0737 Charjabug
+#0738 Vikavolt
+#0739 Crabrawler
+#0740 Crabominable
+#0741 Oricorio
+#0741 Oricorio (Pom-Pom)
+#0741 Oricorio (Pa'u)
+#0741 Oricorio (Sensu)
+#0742 Cutiefly
+#0743 Ribombee
+#0744 Rockruff
+#0745 Lycanroc
+#0745 Lycanroc (Midnight)
+#0745 Lycanroc (Dusk)
+#0747 Mareanie
+#0748 Toxapex
+#0749 Mudbray
+#0750 Mudsdale
+#0751 Dewpider
+#0752 Araquanid
+#0753 Fomantis
+#0754 Lurantis
+#0757 Salandit
+#0758 Salazzle
+#0761 Bounsweet
+#0762 Steenee
+#0763 Tsareena
+#0764 Comfey
+#0765 Oranguru
+#0766 Passimian
+#0769 Sandygast
+#0770 Palossand
+#0774 Minior
+#0774 Minior (Red Core)
+#0774 Minior (Orange Core)
+#0774 Minior (Yellow Core)
+#0774 Minior (Green Core)
+#0774 Minior (Blue Core)
+#0774 Minior (Indigo Core)
+#0774 Minior (Violet Core)
+#0775 Komala
+#0778 Mimikyu
+#0779 Bruxish
+#0782 Jangmo-o
+#0783 Hakamo-o
+#0784 Kommo-o
+#0789 Cosmog
+#0790 Cosmoem
+#0791 Solgaleo
+#0792 Lunala
+#0800 Necrozma
+#0800 Necrozma (Dusk Mane)
+#0800 Necrozma (Dawn Wings)
+#0801 Magearna
+#0801 Magearna (Original Color)
+#0810 Grookey
+#0811 Thwackey
+#0812 Rillaboom
+#0813 Scorbunny
+#0814 Raboot
+#0815 Cinderace
+#0816 Sobble
+#0817 Drizzile
+#0818 Inteleon
+#0819 Skwovet
+#0820 Greedent
+#0821 Rookidee
+#0822 Corvisquire
+#0823 Corviknight
+#0833 Chewtle
+#0834 Drednaw
+#0837 Rolycoly
+#0838 Carkol
+#0839 Coalossal
+#0840 Applin
+#0841 Flapple
+#0842 Appletun
+#0843 Silicobra
+#0844 Sandaconda
+#0845 Cramorant
+#0846 Arrokuda
+#0847 Barraskewda
+#0848 Toxel
+#0849 Toxtricity
+#0849 Toxtricity (Low Key)
+#0854 Sinistea
+#0854 Sinistea (Antique)
+#0855 Polteageist
+#0855 Polteageist (Antique)
+#0856 Hatenna
+#0857 Hattrem
+#0858 Hatterene
+#0859 Impidimp
+#0860 Morgrem
+#0861 Grimmsnarl
+#0863 Perrserker
+#0868 Milcery
+#0869 Alcremie
+#0869 Alcremie (Ruby Cream)
+#0869 Alcremie (Matcha Cream)
+#0869 Alcremie (Mint Cream)
+#0869 Alcremie (Lemon Cream)
+#0869 Alcremie (Salted Cream)
+#0869 Alcremie (Ruby Swirl)
+#0869 Alcremie (Caramel Swirl)
+#0869 Alcremie (Rainbow Swirl)
+#0870 Falinks
+#0871 Pincurchin
+#0872 Snom
+#0873 Frosmoth
+#0874 Stonjourner
+#0875 Eiscue
+#0875 Eiscue (Noice)
+#0876 Indeedee
+#0876 Indeedee (Female)
+#0877 Morpeko
+#0878 Cufant
+#0879 Copperajah
+#0884 Duraludon
+#0885 Dreepy
+#0886 Drakloak
+#0887 Dragapult
+#0888 Zacian
+#0888 Zacian (Crowned)
+#0889 Zamazenta
+#0889 Zamazenta (Crowned)
+#0890 Eternatus
+#0891 Kubfu
+#0892 Urshifu
+#0892 Urshifu (Rapid Strike)
+#0893 Zarude
+#0893 Zarude (Dada)
+#0894 Regieleki
+#0895 Regidrago
+#0896 Glastrier
+#0897 Spectrier
+#0898 Calyrex
+#0898 Calyrex (Ice Rider)
+#0898 Calyrex (Shadow Rider)
+#0899 Wyrdeer
+#0900 Kleavor
+#0901 Ursaluna
+#0901 Ursaluna (Bloodmoon)
+#0902 Basculegion
+#0902 Basculegion (Female)
+#0903 Sneasler
+#0904 Overqwil
+#0905 Enamorus
+#0905 Enamorus (Therian)
+#0906 Sprigatito
+#0907 Floragato
+#0908 Meowscarada
+#0909 Fuecoco
+#0910 Crocalor
+#0911 Skeledirge
+#0912 Quaxly
+#0913 Quaxwell
+#0914 Quaquaval
+#0915 Lechonk
+#0916 Oinkologne
+#0916 Oinkologne (Female)
+#0917 Tarountula
+#0918 Spidops
+#0919 Nymble
+#0920 Lokix
+#0921 Pawmi
+#0922 Pawmo
+#0923 Pawmot
+#0924 Tandemaus
+#0925 Maushold
+#0925 Maushold (Family of Three)
+#0926 Fidough
+#0927 Dachsbun
+#0928 Smoliv
+#0929 Dolliv
+#0930 Arboliva
+#0931 Squawkabilly
+#0931 Squawkabilly (Blue Plumage)
+#0931 Squawkabilly (Yellow Plumage)
+#0931 Squawkabilly (White Plumage)
+#0932 Nacli
+#0933 Naclstack
+#0934 Garganacl
+#0935 Charcadet
+#0936 Armarouge
+#0937 Ceruledge
+#0938 Tadbulb
+#0939 Bellibolt
+#0940 Wattrel
+#0941 Kilowattrel
+#0942 Maschiff
+#0943 Mabosstiff
+#0944 Shroodle
+#0945 Grafaiai
+#0946 Bramblin
+#0947 Brambleghast
+#0948 Toedscool
+#0949 Toedscruel
+#0950 Klawf
+#0951 Capsakid
+#0952 Scovillain
+#0953 Rellor
+#0954 Rabsca
+#0955 Flittle
+#0956 Espathra
+#0957 Tinkatink
+#0958 Tinkatuff
+#0959 Tinkaton
+#0960 Wiglett
+#0961 Wugtrio
+#0962 Bombirdier
+#0963 Finizen
+#0964 Palafin
+#0964 Palafin (Hero)
+#0965 Varoom
+#0966 Revavroom
+#0967 Cyclizar
+#0968 Orthworm
+#0969 Glimmet
+#0970 Glimmora
+#0971 Greavard
+#0972 Houndstone
+#0973 Flamigo
+#0974 Cetoddle
+#0975 Cetitan
+#0976 Veluza
+#0977 Dondozo
+#0978 Tatsugiri
+#0978 Tatsugiri (Droppy)
+#0978 Tatsugiri (Stretchy)
+#0979 Annihilape
+#0980 Clodsire
+#0981 Farigiraf
+#0982 Dudunsparce
+#0982 Dudunsparce (Three-Segment)
+#0983 Kingambit
+#0984 Great Tusk
+#0985 Scream Tail
+#0986 Brute Bonnet
+#0987 Flutter Mane
+#0988 Slither Wing
+#0989 Sandy Shocks
+#0990 Iron Treads
+#0991 Iron Bundle
+#0992 Iron Hands
+#0993 Iron Jugulis
+#0994 Iron Moth
+#0995 Iron Thorns
+#0996 Frigibax
+#0997 Arctibax
+#0998 Baxcalibur
+#0999 Gimmighoul
+#0999 Gimmighoul (Roaming)
+#1000 Gholdengo
+#1001 Wo-Chien
+#1002 Chien-Pao
+#1003 Ting-Lu
+#1004 Chi-Yu
+#1005 Roaring Moon
+#1006 Iron Valiant
+#1007 Koraidon
+#1008 Miraidon
+#1009 Walking Wake
+#1010 Iron Leaves
+#1011 Dipplin
+#1012 Poltchageist
+#1012 Poltchageist (Artisan)
+#1013 Sinistcha
+#1013 Sinistcha (Masterpiece)
+#1014 Okidogi
+#1015 Munkidori
+#1016 Fezandipiti
+#1017 Ogerpon
+#1017 Ogerpon (Wellspring Mask)
+#1017 Ogerpon (Hearthflame Mask)
+#1017 Ogerpon (Cornerstone Mask)
+#1018 Archaludon
+#1019 Hydrapple
+#1020 Gouging Fire
+#1021 Raging Bolt
+#1022 Iron Boulder
+#1023 Iron Crown
+#1024 Terapagos
+#1024 Terapagos (Terastal)
+#1024 Terapagos (Stellar)
+#1025 Pecharunt
