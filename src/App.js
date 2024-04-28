@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Select from "react-select";
 import './App.css';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   const [stage, setStage] = useState(0);
   const [message, setMessage] = useState('Please select your game intensity');
   const [selectedButton, setSelectedButton] = useState('');
+  const [gameIntensity, setGameIntensity] = useState(false);
 
   useEffect(() => {
     if (stage === 2) {
@@ -32,22 +34,39 @@ function App() {
 
     switch(stage) {
       case 0:
+        //for now the application only supports selecting competitive
+        if (selectedButton=='Competitive'){
+          setGameIntensity(true);
+        }
         setMessage('Please select your generation');
-        setStage(1);
+        setStage(1);        
         break;
       case 1:
-        setMessage('Please select your Pokemon');
-        setStage(2);
+        //Intensity selected
+        setMessage('Please select your Format');
+        setStage(2);        
         break;
       case 2:
-        setMessage('team_recommendations');
+        //Generation selected
+        setMessage('Please select your Pokemon');
         setStage(3);
+        break;
+      case 3:
+        //Display team recommendation
+        setMessage('team_recommendations');
+        setStage(4);
         break;
       default:
         break;
     }
   }
 
+  /*
+  stage 0 = [GAME INTENSITY]
+  stage 1 = [GENERATION]
+  stage 2 = [FORMAT]
+  stage 3 = [POKEMON]
+  */
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>{message}</h1>
@@ -64,12 +83,17 @@ function App() {
           ))}
         </div>
       )}
-      {stage === 2 &&(
+      {stage === 2 && (
+        <div>
+          {['OU', 'Ubers', 'UU', 'RU', 'NU', 'PU', 'LC'].map((numeral) => (
+            <button key={numeral} onClick={() => handleButtonClick(numeral)}>{numeral}</button>
+          ))}
+        </div>
+      )}
+      {stage === 3 &&(
         <div style={{ overflowY: 'scroll', maxHeight: '200px' }}>
-        {data.map((line, index) => (
-          <p key={index}>{line}</p>
-        ))}
-      </div>
+          <Select options={data.map((item, index) => ({ label: item, value: index }))} />
+        </div>
       )}
       <p>Selected Button: {selectedButton}</p>
     </div>

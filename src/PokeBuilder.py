@@ -1,24 +1,27 @@
 from flask import Flask, jsonify, request
-from pathlib import Path
-import requests
+from flask_cors import CORS
+import requests, os
 
 app = Flask(__name__)
+CORS(app)
+
+total_user_input=[]
 
 @app.route('/get-file-data/<generation>', methods=['GET'])
 def get_file_data(generation):
     newGen = generation_switch(generation)
-    with open(f'Gen {newGen}.txt', 'r') as f:
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    file_path = os.path.join(dir_path, f'Gen {newGen}.txt')
+    with open(file_path, 'r') as f:
         lines = f.read().splitlines()
     return jsonify(lines)
 
 @app.route('/generate-pokemon-team', methods=['POST'])
 def generate_pokemon_team():
     user_input = request.json.get('user_input')
-    total_user_input=[]
-    total_user_input.append(user_input)
 
     # Extract relevant information from user input (e.g., game type, generation, format, Pokémon)
-    game_type, generation, format, pokemon = parse_user_input(total_user_input)
+    game_type, generation, format, pokemon = parse_user_input(user_input)
 
     # Construct the prompt for Gemini
     prompt = f"I want to build a {game_type} Pokémon team for {generation} {format} built around {pokemon}. Please provide me with 5 other Pokémon that complement my choice, and provide sets for all 6 Pokémon on the team."
@@ -65,12 +68,18 @@ def generation_switch(generation):
     elif generation == "IX":
         return "9"
     
-def parse_user_input(total_user_input):
-    # Assuming total_user_input is a list of strings like ['game_type', 'generation', 'format', 'pokemon']
-    game_type = total_user_input[0]
-    generation = total_user_input[1]
-    format = total_user_input[2]
-    pokemon = total_user_input[3]
+def parse_user_input(user_input):
+    if len(total_user_input)==4:
+        # Assuming total_user_input is a list of strings like ['game_type', 'generation', 'format', 'pokemon']
+        game_type = total_user_input[0]
+        generation = total_user_input[1]
+        format = total_user_input[2]
+        pokemon = total_user_input[3]
+    else:
+        game_type = " "
+        generation = " "
+        format = " "
+        pokemon = " "
 
     return game_type, generation, format, pokemon
 
