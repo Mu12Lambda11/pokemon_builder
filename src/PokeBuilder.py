@@ -27,9 +27,8 @@ def generate_pokemon_team():
     game_type, generation, format, pokemon = parse_user_input()
 
     # Construct the prompt for Gemini
-    prompt = f"I want to build a {game_type} Pokémon team for Generation {generation} {format} built around {pokemon}. Please provide me with 5 other Pokémon that complement my choice, and provide sets for all 6 Pokémon on the team."
-
-    if game_type and generation and format and pokemon != ' ':
+    prompt = f"I want to build a {game_type} Pokémon team for Generation {generation} {format} built around {pokemon}. Please provide me with 5 other Pokémon that complement my choice, and provide sets for all 6 Pokémon on the team. Describe how to use the team."
+    if game_type and generation and format and pokemon != '':
         prompt_complete=True
     else:
         prompt_complete=False
@@ -37,14 +36,24 @@ def generate_pokemon_team():
     if prompt_complete:
         try:
             response = model.generate_content(prompt)
-            generated_text = response.text
+            generated_text = response.text.replace("*","")            
             print(generated_text)
+
+            #Clear all strings
+            game_type=game_type.replace(game_type, "")
+            generation=generation.replace(generation, "")
+            format = format.replace(format, "")
+            pokemon =pokemon.replace(pokemon, "")
+            total_user_input.clear()
+
             return jsonify({'generated_text': generated_text})
         except Exception as e:
             print(f"Error fetching team recommendations: {e}")
             return jsonify("Error generating team recommendations")
     else:
-        return jsonify({'generated_text': "Team is pending"})
+        total_user_input.clear()
+        return jsonify({'generated_text': "Team could not be generated"})
+    
     
 @app.route('/add-user-route', methods=['POST'])
 def add_user_input():
@@ -73,16 +82,25 @@ def generation_switch(generation):
     
 def parse_user_input():
     if len(total_user_input)==4:
-        # Assuming total_user_input is a list of strings like ['game_type', 'generation', 'format', 'pokemon']
-        game_type = total_user_input[0]
-        generation = total_user_input[1]
-        format = total_user_input[2]
-        pokemon = (total_user_input[3])[6:]
+        # Assuming total_user_input is a list of strings like ['game_type', 'generation', 'format', 'pokemon']       
+        try:
+            #The following code requires initialized variables
+            game_type =game_type.replace(game_type,total_user_input[0]) 
+            generation =generation.replace(generation,total_user_input[1]) 
+            format =format.replace(format,total_user_input[2]) 
+            pokemon =pokemon.replace(pokemon,(total_user_input[3])[6:]) 
+            
+        except:
+            # Check for whether the string variables have already been initialized
+            game_type = total_user_input[0]
+            generation = total_user_input[1]
+            format = total_user_input[2]
+            pokemon = (total_user_input[3])[6:]
     else:
-        game_type = " "
-        generation = " "
-        format = " "
-        pokemon = " "
+        game_type = ""
+        generation = ""
+        format = ""
+        pokemon = ""
 
     return game_type, generation, format, pokemon
 

@@ -2,18 +2,19 @@ import React, { useEffect, useState } from 'react';
 import Select from "react-select";
 import './App.css';
 
+var gameIntensity=false;
+
 function App() {
   const [data, setData] = useState([]);
   const [stage, setStage] = useState(0);
   const [message, setMessage] = useState('Please select your game intensity');
   const [selectedButton, setSelectedButton] = useState('');
-  const [gameIntensity, setGameIntensity] = useState(false);
   const [selectedPokemon, setPokemon] = useState('');
   const [generatedText, setGeneratedText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (stage === 2) {
+    if (stage === 2 || (stage===3 && !gameIntensity)) {
       fetch(`http://localhost:5000/get-file-data/${selectedButton}`)
         .then(response => response.json())
         .then(data => setData(data))
@@ -38,13 +39,13 @@ function App() {
         console.error('Error:', error);
       })
     }
-  }, [stage, selectedButton]);
+  }, [stage, selectedButton,selectedPokemon]);
 
-  const handleButtonClick = async (buttonLabel) => {  // Make this function async
+  const handleButtonClick = async (buttonLabel) => {  
     setSelectedButton(buttonLabel);
   
     // Send the selected button to the backend and wait for it to complete
-    await fetch('http://localhost:5000/add-user-route', {  // Use the await keyword here
+    await fetch('http://localhost:5000/add-user-route', {  
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -57,26 +58,42 @@ function App() {
 
     switch(stage) {
       case 0:
-        //for now the application only supports selecting competitive
-        if (selectedButton=='Competitive'){
-          setGameIntensity(true);
+        if (buttonLabel==="Competitive"){
+          gameIntensity=true;
         }
         setMessage('Please select your generation');
         setStage(1);        
         break;
       case 1:
-        //Intensity selected
-        setMessage('Please select your Format');
-        setStage(2);        
+        if(gameIntensity===true){
+          setMessage('Please select your Format');
+        setStage(2);
+        }else{
+          //Send a blank string in place of format if casual is selected
+          fetch('http://localhost:5000/add-user-route', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ user_input: ' ' }),
+          })
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch((error) => console.error('Error:', error));
+
+          //skip format stage
+          setStage(3);
+        }
+                
         break;
       case 2:
-        //Generation selected
+        
         setMessage('Please select your Pokemon');
         setStage(3);
         break;
       case 3:
         //Display team recommendation
-        setMessage('team_recommendations');
+        setMessage('Team Recommendations');
         setStage(4);
         break;
       default:
@@ -92,8 +109,14 @@ function App() {
   stage 4 = Display Text
   */
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1>{message}</h1>
+  <div style={{ textAlign: 'center' }}>
+  <h1>{message}</h1>
+  {stage === 4 &&(
+        <div>
+        {isLoading ? <p>Loading...</p> : <pre>{generatedText}</pre>}
+      </div>
+      )}
+   <div class ="pokeball">     
       {stage === 0 && (
         <div>
           <button onClick={() => handleButtonClick('Casual')}>Casual</button>
@@ -124,13 +147,10 @@ function App() {
         <button onClick={() => handleButtonClick(selectedPokemon)}>Confirm</button>
       </div>
       )}
-      {stage === 4 &&(
-        <div>
-        {isLoading ? <p>Loading...</p> : <p>{generatedText}</p>}
-      </div>
-      )}
-      <p>Selected Button: {selectedButton}</p>
+      
+      <h2>Selected Button: {selectedButton}</h2>
     </div>
+   </div>
   );
 }
 
