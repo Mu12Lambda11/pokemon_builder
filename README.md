@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# ![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/e099a1f0-ed23-4ee3-bd05-4d447954ce3b) Welcome To PokeBuilder ![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/ff95f41f-c39c-455d-902b-429532b82c09)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/e6869c53-2bcc-46d3-b9b4-cbab113d9af7)
+![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/ebc42fd9-8b45-4281-8d0d-2f1c60075c06)
+![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/61fae774-20c2-4631-bc06-c719801f6c75)
 
-## Available Scripts
+This project is designed to help easily generate optimal pokemon teams with the aid of generative AI.
+Please Enjoy!
 
-In the project directory, you can run:
+# ![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/699f3183-d33d-4b4d-8a55-6c94a5fa4872) Examples ![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/a2398d7b-469c-4d65-a6a7-f231db4f0039)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# ![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/4bebb2ad-a4ce-4ef4-8dd0-5ee87e2100f7) Technologies ![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/3365e2f6-ff8a-43d7-92e3-b0dfe13dd2ec)
+-React: A commonly used HTML and JS frontend web framework. Used for the project's frontend.
 
-### `npm test`
+-Python Flask: A commonly used python backend framework. Used for the project's backend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-Google Gemini: Google's proprietary generative AI model. Used for the project's team generation.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
