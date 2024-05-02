@@ -2,9 +2,20 @@ import React, { useEffect, useState } from 'react';
 import Select from "react-select";
 import './App.css';
 
+//gameIntensity: A boolean variable that determines the user's desired game intensity. Made global for ease of use.
 var gameIntensity=false;
 
 function App() {
+  /*
+  --Variables--
+  data: A simple variable to hold data received from the backend
+  stage: A variable to parse what stage of the process the user is in
+  message: A string variable that displays a message to the user
+  selectedButton: A variable that determines the button that the user selects
+  selectedPokemon: A variable that determines the pokemon that the user selects from a list
+  generatedText: A variable that is meant to hold the generated team recommendation text
+  isLoading: A boolean variable that determines if the generated text has loaded
+  */
   const [data, setData] = useState([]);
   const [stage, setStage] = useState(0);
   const [message, setMessage] = useState('Please select your game intensity');
@@ -14,12 +25,14 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    // If on the generation stage or the casual pokemon selection stage
     if (stage === 2 || (stage===3 && !gameIntensity)) {
       fetch(`http://localhost:5000/get-file-data/${selectedButton}`)
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error(error));
     }
+    // If on the final team generation stage
     else if (stage === 4) {
       setIsLoading(true);
       fetch('http://localhost:5000/generate-pokemon-team', {
@@ -58,6 +71,7 @@ function App() {
 
     switch(stage) {
       case 0:
+        //
         if (buttonLabel==="Competitive"){
           gameIntensity=true;
         }
@@ -87,7 +101,7 @@ function App() {
                 
         break;
       case 2:
-        
+        //Pokemon Selection
         setMessage('Please select your Pokemon');
         setStage(3);
         break;

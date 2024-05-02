@@ -9,9 +9,10 @@ model = genai.GenerativeModel('gemini-pro')
 
 app = Flask(__name__)
 CORS(app)
-
+# User input array is global for easy access
 total_user_input=[]
 
+# Function to grab a particular generation file
 @app.route('/get-file-data/<generation>', methods=['GET'])
 def get_file_data(generation):
     newGen = generation_switch(generation)
@@ -21,6 +22,7 @@ def get_file_data(generation):
         lines = f.read().splitlines()
     return jsonify(lines)
 
+# Function to prompt the AI and generate a pokemon team
 @app.route('/generate-pokemon-team', methods=['POST'])
 def generate_pokemon_team():
     # Extract relevant information from user input (e.g., game type, generation, format, Pokémon)
@@ -54,12 +56,13 @@ def generate_pokemon_team():
         total_user_input.clear()
         return jsonify({'generated_text': "Team could not be generated"})
     
-    
+# Function to add user input to the array of total input
 @app.route('/add-user-route', methods=['POST'])
 def add_user_input():
     user_input = request.json.get('user_input')
     total_user_input.append(user_input)
-    
+   
+# Function that acts as a switch to convert roman numerals to integers (still a string) 
 def generation_switch(generation):
     if generation == "I":
         return "1"
@@ -79,7 +82,8 @@ def generation_switch(generation):
         return "8"
     elif generation == "IX":
         return "9"
-    
+
+# Function to check the legitimacy of the user's input, and, if possible, initialize or assign local variables    
 def parse_user_input():
     if len(total_user_input)==4:
         # Assuming total_user_input is a list of strings like ['game_type', 'generation', 'format', 'pokemon']       
