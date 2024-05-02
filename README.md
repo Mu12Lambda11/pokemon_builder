@@ -8,6 +8,11 @@ This project is designed to help easily generate optimal pokemon teams with the 
 Please Enjoy!
 
 # ![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/699f3183-d33d-4b4d-8a55-6c94a5fa4872) Examples ![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/a2398d7b-469c-4d65-a6a7-f231db4f0039)
+![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/701a2f4a-a64f-4f39-9f52-b8690fede7ae)
+![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/47042e35-1f8f-4206-ba49-13d6cfe4800e)
+![image](https://github.com/Mu12Lambda11/pokemon_builder/assets/89223075/0279d53c-f67c-4996-9b59-b58d6d0aabd3)
+
+
 
 
 
