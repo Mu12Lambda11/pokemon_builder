@@ -3,7 +3,7 @@ from flask_cors import CORS
 import textwrap, os
 import google.generativeai as genai
 
-my_api_key= "AIzaSyCsd4MWaVsHJCUQ4MPdGFlaDQYCfAp4PTc"
+my_api_key= "YOUR_API_KEY_HERE"
 genai.configure(api_key=my_api_key)
 model = genai.GenerativeModel('gemini-pro')
 
