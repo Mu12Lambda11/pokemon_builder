@@ -19,6 +19,8 @@ div{
 }
 
 pre{
+  box-sizing: border-box;
+  max-height: inherit;
   font-size: 20px;
   flex-shrink: 1;
   text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
